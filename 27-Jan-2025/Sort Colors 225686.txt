@@ -1,0 +1,20 @@
+# Problem: Sort Colors - https://leetcode.com/problems/sort-colors/
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        vector<int> freq(3,0);
+        for(int i:nums)
+            freq[i]++;
+        int i = 0;
+        for(int j = 0 ; j < freq.size(); j++)
+        {
+            while(freq[j] > 0)
+            {
+                nums[i] = j;
+                freq[j]--;
+                i++;
+            }
+        }
+    }
+};
