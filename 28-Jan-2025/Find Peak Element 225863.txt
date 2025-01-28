@@ -1,0 +1,11 @@
+# Problem: Find Peak Element - https://leetcode.com/problems/find-peak-element
+
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+        int i =0;
+        while(i+1<nums.size() && nums[i+1]> nums[i])
+            i++;
+        return i;
+    }
+};
