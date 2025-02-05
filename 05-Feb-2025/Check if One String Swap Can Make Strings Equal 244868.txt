@@ -1,0 +1,16 @@
+# Problem: Check if One String Swap Can Make Strings Equal - https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal/description/
+
+class Solution {
+public:
+    bool areAlmostEqual(string s1, string s2) {
+        if(s1==s2)
+            return true;
+        int left=0,right=s1.length()-1;
+        while(s1[left]==s2[left])
+            left++;
+        while(s1[right]==s2[right])
+            right--;
+        swap(s1[left],s1[right]);
+        return s1==s2;
+    }
+};
