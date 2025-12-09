@@ -1,1 +1,9 @@
-
+class Solution:
+    def divideString(self, s: str, k: int, fill: str) -> List[str]:
+        rem = len(s) % k 
+        ans = []
+        for i in range(0,len(s) - rem,k) :
+            ans.append(s[i:i+k])
+        if rem :
+            ans.append(s[-rem:] + fill * (k - rem))
+        return ans
