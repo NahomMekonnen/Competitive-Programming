@@ -1,0 +1,15 @@
+class Solution:
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        ans = 0
+        n = len(nums)
+        for i in range(n) :
+            if i - k >= 0 and i + k < n :
+                if nums[i] > nums[i-k] and nums[i] > nums[i+k] :
+                    ans += nums[i]
+            elif i - k >= 0 :
+                if nums[i] > nums[i-k] :
+                    ans += nums[i]
+            elif i + k <= n :
+                if nums[i] > nums[i+k] :
+                    ans += nums[i]
+        return ans  
