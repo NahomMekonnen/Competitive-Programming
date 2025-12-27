@@ -1,0 +1,13 @@
+class Solution:
+    def sortArrayByParityII(self, nums: List[int]) -> List[int]:
+        e, o = [], []
+        for i in nums :
+            if i % 2 == 0 :
+                e.append(i)
+            else :
+                o.append(i)
+        ans = [] 
+        for i in range(len(e)) :
+            ans.append(e[i])
+            ans.append(o[i])
+        return ans
