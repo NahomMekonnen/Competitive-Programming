@@ -8,4 +8,5 @@ for i in range(t):
     for i in range(10):
         if word[i] != base[i]:
             count += 1
+
     print(count)
