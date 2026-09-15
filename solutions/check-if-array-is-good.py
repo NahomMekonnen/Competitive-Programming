@@ -1,19 +1,17 @@
 class Solution:
-    S = [0] * 201
-    vers = 0
-
     def isGood(self, nums: List[int]) -> bool:
-        Solution.vers += 1
         n = len(nums) - 1
+        dup = 0
 
         for num in nums:
-            if num > n or Solution.S[num] == -Solution.vers: return False
+            val = abs(num)
+            if val > n: return False
 
-            if Solution.S[num] == Solution.vers:
-                if num < n: return False
-                Solution.S[num] = -Solution.vers
+            if nums[val - 1] < 0:
+                if val < n or dup: return False
+                dup |= 1
                 continue
 
-            Solution.S[num] = Solution.vers
+            nums[val - 1] = -nums[val - 1]
 
         return True
